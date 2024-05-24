@@ -1,0 +1,313 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+}
+
+header, main, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стилі для шапки */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.university-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.university-info {
+    display: flex;
+    align-items: center;
+}
+
+.details {
+    margin-right: 20px; /* Пробний відступ між details і logos */
+}
+
+.logos {
+    display: flex;
+}
+
+.logos img {
+    margin-right: 10px; /* Пробний відступ між логотипами */
+}
+
+.personal-info {
+    margin-top: 10px; /* Пробний відступ між details і personal-info */
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px; /* Пробний відступ від personal-info */
+}
+
+.main-menu button {
+    padding: 10px 20px;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+}
+
+.main-menu button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Стилі для основного контенту */
+main {
+    padding: 20px;
+}
+
+.home, .biography, .group, .hobbies, .interesting {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.zagolovok {
+    margin-bottom: -50px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.title1 {
+    margin-bottom: -30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.hidden {
+    display: none;
+}
+section:target {
+    display: block; /* Показуємо тільки активний розділ */
+}
+/* Приховуємо розділ "Головна", якщо активний будь-який інший розділ */
+section:not(:target)#home {
+    display: none;
+}
+.title h1 {
+    margin-top: 0;
+}
+
+.bio img {
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.info h2 {
+    margin-top: 0;
+}
+
+.group-info h2 {
+    margin-top: 0;
+}
+
+.hobbies .hobby {
+    margin-bottom: 10px;
+}
+
+.interesting .block {
+    margin-bottom: 20px;
+}
+
+/* Стилі для футера */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-ads {
+    margin-bottom: 10px;
+}
+
+.footer-right-ads {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Рекламні блоки */
+.ads, .ads-right {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Зміни для адаптивної градки */
+@media (max-width: 600px) {
+    .main-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Зміни для однакової висоти колонок */
+.biography .bio,
+.group-info .group-info,
+.hobbies .hobbies,
+.interesting .blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Зміни горизонтального та вертикального вирівнювання */
+.biography .bio img,
+.group-info .group-info img,
+.hobbies .hobbies img,
+.interesting .blocks img {
+    max-width: 100%;
+    height: auto;
+}
+
+.biography .bio .info,
+.group-info .group-info .group-info,
+.hobbies .hobbies .hobbies,
+.interesting .blocks .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Зміни порядку виводу flex-елементів */
+.biography .bio img,
+.hobbies .hobbies .hobby:nth-child(even) {
+    order: 2;
+}
+
+.biography .bio .info,
+.hobbies .hobbies .hobby:nth-child(odd) {
+    order: 1;
+}
+
+/* Зміни для відображення "Хоббі" та "Цікаве" як Grid на головній сторінці */
+.home .hobbies,
+.home .interesting {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Дві колонки */
+    grid-template-rows: auto auto; /* Два рядки */
+    grid-gap: 20px; /* Відстань між елементами */
+}
+#video, #discord {
+    text-align: center;
+    margin-bottom: 20px; /* Додайте зазор між відео */
+}
+
+/* Стилі для банера */
+.banner {
+    position: relative;
+    background-image: url('background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto; /* Центруємо горизонтально */
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.animated-text {
+    margin: 10px 0;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.animated-image1 {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 165px; /* Розташовуємо перше зображення внизу */
+    left: 10%; /* Розташовуємо перше зображення ліворуч */
+    transform: translateY(50%);
+    animation: float 4s ease-in-out infinite alternate; /* Додаємо анімаційний ефект */
+}
+
+.animated-image2 {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 180px; /* Розташовуємо друге зображення внизу */
+    left: 45%; /* Розташовуємо друге зображення по центру */
+    transform: translateX(-50%) translateY(50%); /* Центруємо по горизонталі */
+    animation: float 4s ease-in-out infinite alternate; /* Додаємо анімаційний ефект */
+}
+
+.animated-image3 {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    top: 150px; /* Розташовуємо третє зображення внизу */
+    right: 10%; /* Розташовуємо третє зображення праворуч */
+    transform: translateY(50%);
+    animation: float 4s ease-in-out infinite alternate; /* Додаємо анімаційний ефект */
+}
+
+
+
+/* Анімації */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    from { transform: translateY(-50%) translateX(0); }
+    to { transform: translateY(-50%) translateX(20px); }
+}
+
+
+/* Адаптивний дизайн */
+@media (max-width: 1200px) {
+    .animated-image {
+        width: 80px;
+        height: 80px;
+    }
+    .animated-text {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-image {
+        width: 60px;
+        height: 60px;
+    }
+    .animated-text {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-image {
+        width: 50px;
+        height: 50px;
+    }
+    .animated-text {
+        font-size: 1em;
+    }
+}
